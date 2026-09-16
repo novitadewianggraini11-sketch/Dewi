@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokoOnlineku - Platform Jual Beli Terpercaya</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Top Announcement Bar */
+        .top-bar {
+            background: #1e293b;
+            color: #f8fafc;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Navbar */
+        header {
+            background: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.025em;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            background: #f59e0b;
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+        }
+
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            color: #2563eb;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .feature-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .feature-text p {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #f1f5f9;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #ef4444;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .product-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            color: #2563eb;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .btn-buy {
+            margin-top: auto;
+            background: #25d366;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .btn-buy:hover {
+            background: #128c7e;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 40px 20px 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #334155;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 24px auto 0;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        🚀 Gratis Ongkir ke seluruh Indonesia untuk pembelian pertama! Gunakan kode: <b>WELCOME2026</b>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo"><i class="fa-solid fa-bag-shopping"></i> TokoKu</a>
+            <nav class="nav-links">
+                <a href="#">Beranda</a>
+                <a href="#produk">Produk</a>
+                <a href="#tentang">Tentang</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>Belanja Mudah, Cepat & Terpercaya</h1>
+        <p>Temukan berbagai produk pilihan berkualitas dengan harga terbaik dan garansi resmi.</p>
+        <a href="#produk" class="btn-primary">Lihat Produk Pilihan</a>
+    </section>
+
+    <!-- Features Section -->
+    <div class="features">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="feature-text">
+                <h4>Pengiriman Cepat</h4>
+                <p>Pesanan dikirim di hari yang sama</p>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="feature-text">
+                <h4>Jaminan 100% Ori</h4>
+                <p>Garansi uang kembali jika palsu</p>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+            <div class="feature-text">
+                <h4>Layanan 24/7</h4>
+                <p>Siap membantu kebutuhan Anda</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Katalog Produk -->
+    <div class="container" id="produk">
+        <div class="section-header">
+            <h2 class="section-title">Produk Unggulan</h2>
+            <p class="section-subtitle">Koleksi barang terpopuler minggu ini dengan harga spesial</p>
+        </div>
+        
+        <div class="product-grid">
+
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <span class="product-badge">Terlaris</span>
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="Headphone" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Elektronik</span>
+                    <h3 class="product-title">Headphone Wireless Premium</h3>
+                    <div class="product-price">Rp 450.000</div>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20membeli%20Headphone%20Wireless" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> Beli via WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <span class="product-badge">Promo</span>
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Jam Tangan" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Aksesori</span>
+                    <h3 class="product-title">Smartwatch Elegan Series 5</h3>
+                    <div class="product-price">Rp 850.000</div>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20membeli%20Smartwatch" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> Beli via WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Sepatu" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Fashion</span>
+                    <h3 class="product-title">Sepatu Sport Sneaker Pro</h3>
+                    <div class="product-price">Rp 620.000</div>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20membeli%20Sepatu%20Sport" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> Beli via WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <span class="product-badge">Baru</span>
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500" alt="Kamera" class="product-img">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Fotografi</span>
+                    <h3 class="product-title">Kamera Mirrorless Compact</h3>
+                    <div class="product-price">Rp 3.450.000</div>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20membeli%20Kamera%20Mirrorless" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> Beli via WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="footer-content">
+            <div class="footer-logo"><i class="fa-solid fa-bag-shopping"></i> TokoKu</div>
+            <p>Platform jual beli barang berkualitas tinggi dengan pelayanan responsif.</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TokoKu. All Rights Reserved. Prepared for GitHub Pages.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
